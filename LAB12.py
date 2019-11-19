@@ -200,9 +200,12 @@ def heapSort(numList):
     '''
     sort_heap = MinHeap()
     # -- YOUR CODE STARTS HERE
+
+    # push number list to heap
     for i in range(len(numList)): 
         sort_heap.insert(numList[i])
 
+    # pop list from heap
     sort_list = []
     while len(sort_heap) > 0 :
         val = sort_heap.pop()
