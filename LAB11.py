@@ -18,3 +18,19 @@ def selectionSort(numList):
         ({1: [9, 3, 5, 4, 1, 78, 67], 2: [1, 3, 5, 4, 9, 78, 67], 3: [1, 3, 5, 4, 9, 78, 67], 4: [1, 3, 4, 5, 9, 78, 67], 5: [1, 3, 4, 5, 9, 78, 67], 6: [1, 3, 4, 5, 9, 78, 67], 7: [1, 3, 4, 5, 9, 67, 78]}, [1, 3, 4, 5, 9, 67, 78])
     '''
     # YOUR CODE STARTS HERE
+    # Traverse through all array elements 
+    for i in range(len(numList)): 
+        
+        # Find the minimum element in remaining  
+        # unsorted array 
+        min_idx = i 
+        for j in range(i+1, len(numList)): 
+            if numList[min_idx] > numList[j]: 
+                min_idx = j 
+                
+        # Swap the found minimum element with  
+        # the first element         
+        numList[i], numList[min_idx] = numList[min_idx], numList[i] 
+    
+    # Driver code to test above 
+    return numList
